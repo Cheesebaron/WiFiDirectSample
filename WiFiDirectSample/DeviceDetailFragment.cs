@@ -10,7 +10,6 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Java.Net;
-using WifiStuff;
 using Environment = Android.OS.Environment;
 using File = Java.IO.File;
 using IOException = Java.IO.IOException;

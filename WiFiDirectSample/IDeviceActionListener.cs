@@ -1,6 +1,6 @@
 using Android.Net.Wifi.P2p;
 
-namespace WifiStuff
+namespace com.example.android.wifidirect
 {
     public interface IDeviceActionListener
     {

@@ -7,7 +7,6 @@ using Android.Provider;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using WifiStuff;
 
 namespace com.example.android.wifidirect
 {
