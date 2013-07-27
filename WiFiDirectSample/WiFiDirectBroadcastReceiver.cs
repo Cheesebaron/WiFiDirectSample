@@ -38,10 +38,10 @@ namespace com.example.android.wifidirect
                 var state = intent.GetIntExtra(WifiP2pManager.ExtraWifiState, -1);
                 if (state == (int) WifiP2pState.Enabled)
                     // Wifi Direct mode is enabled
-                    _activity.IsWifiP2pEnabled = true;
+                    _activity.IsWifiP2PEnabled = true;
                 else
                 {
-                    _activity.IsWifiP2pEnabled = false;
+                    _activity.IsWifiP2PEnabled = false;
                     _activity.ResetData();
                 }
                 Log.Debug(WiFiDirectActivity.Tag, "P2P state changed - " + state);

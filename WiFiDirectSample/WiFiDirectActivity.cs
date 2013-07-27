@@ -19,9 +19,9 @@ namespace com.example.android.wifidirect
 
         private readonly IntentFilter _intentFilter = new IntentFilter();
         private WifiP2pManager.Channel _channel;
-        private BroadcastReceiver _receiver = null;
+        private BroadcastReceiver _receiver;
 
-        public bool IsWifiP2pEnabled { get; set; }
+        public bool IsWifiP2PEnabled { get; set; }
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -91,7 +91,7 @@ namespace com.example.android.wifidirect
                     }
                     return true;
                 case Resource.Id.atn_direct_discover:
-                    if (!IsWifiP2pEnabled)
+                    if (!IsWifiP2PEnabled)
                     {
                         Toast.MakeText(this, Resource.String.p2p_off_warning, ToastLength.Short).Show();
                         return true;
@@ -186,7 +186,5 @@ namespace com.example.android.wifidirect
             fragment.ResetViews();
             _manager.RemoveGroup(_channel, new MyActionListner(this, "Disconnect", () => { fragment.View.Visibility = ViewStates.Gone; }));
         }
-
-        
     }
 }
