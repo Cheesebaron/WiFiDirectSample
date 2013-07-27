@@ -110,8 +110,12 @@ namespace com.example.android.wifidirect
                 _progressDialog.Dismiss();
             
             _peers.Clear();
-            _peers.AddRange(peers.DeviceList);
-            ((WiFiPeerListAdapter)ListAdapter).NotifyDataSetChanged();
+            foreach (var peer in peers.DeviceList)
+            {
+                _peers.Add(peer);
+            }
+            ListAdapter = new WiFiPeerListAdapter(Activity, Resource.Layout.row_devices, _peers);
+            //((WiFiPeerListAdapter)ListAdapter).NotifyDataSetChanged();
             if (_peers.Count == 0)
             {
                 Log.Debug(WiFiDirectActivity.Tag, "No devices found");
@@ -121,7 +125,8 @@ namespace com.example.android.wifidirect
         public void ClearPeers()
         {
             _peers.Clear();
-            ((WiFiPeerListAdapter)ListAdapter).NotifyDataSetChanged();
+            ListAdapter = new WiFiPeerListAdapter(Activity, Resource.Layout.row_devices, _peers);
+            //((WiFiPeerListAdapter)ListAdapter).NotifyDataSetChanged();
         }
 
         public void OnInitiateDiscovery()

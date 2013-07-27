@@ -54,8 +54,7 @@ namespace com.example.android.wifidirect
                 if (_manager != null)
                 {
                     _manager.RequestPeers(_channel,
-                                          (WifiP2pManager.IPeerListListener)
-                                          _activity.FragmentManager.FindFragmentById(Resource.Id.frag_list));
+                                          _activity.FragmentManager.FindFragmentById<DeviceListFragment>(Resource.Id.frag_list));
                 }
                 Log.Debug(WiFiDirectActivity.Tag, "P2P peers changed");
             }
